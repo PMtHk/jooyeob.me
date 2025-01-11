@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        pretendard: ['var(--font-pretendard)', 'sans'],
+      },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
