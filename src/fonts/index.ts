@@ -4,4 +4,5 @@ export const pretendard = localFont({
   src: './PretendardVariable.woff2',
   display: 'swap',
   variable: '--font-pretendard',
+  weight: '400 700',
 })
