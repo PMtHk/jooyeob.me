@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-export  function Header() {
+export function Header() {
   return (
     <nav className='sticky top-0 w-full h-[60px] bg-background border-b z-50 px-4'>
       <div className='h-full sm:px-6 md:w-[92%] lg:w-[92%] md:mx-auto lg:mx-auto'>
