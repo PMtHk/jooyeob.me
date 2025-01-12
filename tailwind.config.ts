@@ -7,13 +7,19 @@ export default {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      screens: {
-        sm: { max: '480px' },
-        md: { min: '481px', max: '900px' },
-        lg: { min: '901px' },
-      },
+    screens: {
+      sm: '480',
+      md: '640px',
+      lg: '900px',
+      xl: '1200px',
+    },
 
+    container: {
+      center: true,
+      padding: '1rem',
+    },
+
+    extend: {
       fontFamily: {
         pretendard: ['var(--font-pretendard)', 'sans'],
       },
@@ -77,33 +83,45 @@ export default {
           800: 'var(--red-800)',
           900: 'var(--red-900)',
         },
+
+        alt: {
+          DEFAULT: 'var(--grey-500)',
+          50: 'var(--grey-50)',
+          100: 'var(--grey-100)',
+          200: 'var(--grey-200)',
+          300: 'var(--grey-300)',
+          400: 'var(--grey-400)',
+          500: 'var(--grey-500)',
+          600: 'var(--grey-600)',
+          700: 'var(--grey-700)',
+          800: 'var(--grey-800)',
+          900: 'var(--grey-900)',
+        },
+      },
+
+      borderColor: {
+        DEFAULT: 'var(--border)',
       },
 
       fontSize: {
-        // Bold
-        'display-sm': ['16px', { lineHeight: '1.4', fontWeight: '700' }],
-        'display-md': ['20px', { lineHeight: '1.4', fontWeight: '700' }],
-        'display-lg': ['24px', { lineHeight: '1.3', fontWeight: '700' }],
+        'display-xs': ['16px', { lineHeight: '1.4', fontWeight: '600' }],
+        'display-sm': ['20px', { lineHeight: '1.4', fontWeight: '600' }],
+        'display-md': ['24px', { lineHeight: '1.4', fontWeight: '600' }],
+        'display-lg': ['32px', { lineHeight: '1.3', fontWeight: '600' }],
+        'display-xl': ['48px', { lineHeight: '1.3', fontWeight: '600' }],
 
-        // Bold (title in post)
-        'title-sm': ['32px', { lineHeight: '1.3', fontWeight: '700' }],
-        'title-lg': ['40px', { lineHeight: '1.2', fontWeight: '700' }],
+        'strong-sm': ['13px', { lineHeight: '1.5', fontWeight: '500' }],
+        'strong-md': ['16px', { lineHeight: '1.5', fontWeight: '500' }],
+        'strong-lg': ['20px', { lineHeight: '1.4', fontWeight: '500' }],
 
-        // Semi-bold
-        'text-strong-sm': ['13px', { lineHeight: '1.5', fontWeight: '600' }],
-        'text-strong-md': ['16px', { lineHeight: '1.5', fontWeight: '600' }],
-        'text-strong-lg': ['20px', { lineHeight: '1.4', fontWeight: '600' }],
+        'default-xs': ['11px', { lineHeight: '1.6', fontWeight: '400' }],
+        'default-sm': ['13px', { lineHeight: '1.6', fontWeight: '400' }],
+        'default-md': ['14px', { lineHeight: '1.5', fontWeight: '400' }],
+        'default-lg': ['15px', { lineHeight: '1.5', fontWeight: '400' }],
+        'default-xl': ['17px', { lineHeight: '1.5', fontWeight: '400' }],
 
-        // Medium
-        'text-xs': ['11px', { lineHeight: '1.6', fontWeight: '500' }],
-        'text-sm': ['13px', { lineHeight: '1.6', fontWeight: '500' }],
-        'text-md': ['14px', { lineHeight: '1.5', fontWeight: '500' }],
-        'text-lg': ['15px', { lineHeight: '1.5', fontWeight: '500' }],
-        'text-xl': ['17px', { lineHeight: '1.5', fontWeight: '500' }],
-
-        // Regular
-        'body-sm': ['13px', { lineHeight: '1.6', fontWeight: '400' }],
-        'body-md': ['15px', { lineHeight: '1.6', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '1.6', fontWeight: '300' }],
+        'body-md': ['15px', { lineHeight: '1.6', fontWeight: '300' }],
       },
     },
   },
