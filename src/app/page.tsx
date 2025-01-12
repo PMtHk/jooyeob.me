@@ -1,18 +1,9 @@
+import Image from 'next/image'
+
 export default function Home() {
   return (
     <div className='w-full min-h-screen bg-background text-foreground pb-12'>
-      <div className='mx-auto flex justify-evenly max-w-[1100px] mt-6 mb-10 px-6'>
-        <div className='border rounded-xl w-full h-[80px] md:h-[150px]'>배너 이미지</div>
-        {/*<Image*/}
-        {/*  src='/toss_tech.webp'*/}
-        {/*  alt='banner'*/}
-        {/*  width={0}*/}
-        {/*  height={0}*/}
-        {/*  sizes='100vw'*/}
-        {/*  style={{ width: '100%', height: 'auto', maxHeight: '150px', objectFit: 'contain' }}*/}
-        {/*  className='rounded-xl'*/}
-        {/*/>*/}
-      </div>
+      <Banner />
 
       <div className='mx-auto flex justify-evenly max-w-[1200px] break-keep'>
         <div className='w-full lg:max-w-[700px] flex flex-col px-6'>
@@ -269,6 +260,21 @@ export default function Home() {
           </div>
         </div>
       </div>
+    </div>
+  )
+}
+
+function Banner() {
+  return (
+    <div className='mx-auto flex justify-evenly max-w-[1100px] mt-6 mb-10 px-6 h-[80px] md:h-[150px]'>
+      <Image
+        src='/banner.png'
+        alt='banner'
+        width={0}
+        height={0}
+        sizes='100vw'
+        className='w-full h-auto object-center sc object-cover rounded-xl'
+      />
     </div>
   )
 }

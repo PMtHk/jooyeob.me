@@ -1,5 +1,5 @@
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
-  const slug = (await params).slug
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+  const id = (await params).id
 
   return (
     <div className='w-full min-h-screen'>
@@ -7,7 +7,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         <article>
           <header className='pt-9'>
             <h1 className='mt-9 text-display-lg md:text-display-xl'>
-              {slug} 외부 API 규칙을 준수하며 병렬로 많은 요청을 처리하기
+              {id} 외부 API 규칙을 준수하며 병렬로 많은 요청을 처리하기
             </h1>
             <div className='flex flex-wrap mt-5'>
               <span className='text-default-sm text-alt-700 dark:text-alt-300 bg-alt-100 dark:bg-alt-800 dark:hover:bg-alt-900 rounded-full px-2 py-1 mr-1.5 mb-2 hover:bg-alt-200 cursor-pointer'>
