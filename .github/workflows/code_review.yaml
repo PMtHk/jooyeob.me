@@ -22,19 +22,13 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           MODEL: gpt-3.5-turbo
           PROMPT: |
-            Please provide a constructive code review for a junior developer, focusing on:
+            Please provide a constructive code review in Korean, focusing on:
 
             1. Code organization & readability (naming, structure, complexity)
             2. Basic security & error handling
             3. Performance considerations
             4. Best practices (reusability, SOLID principles, testability)
 
-            For each issue:
-            - Explain why it matters
-            - Show example of improvement
-            - Mention relevant best practices
-
-            Balance critique with positive feedback. Keep explanations educational and actionable.
           top_p: 0.4
           temperature: 0.2
           max_tokens: 4000
