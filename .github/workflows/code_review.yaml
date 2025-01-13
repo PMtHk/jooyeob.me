@@ -8,7 +8,7 @@ on:
   pull_request:
     branches:
       - dev
-    types: [ opened, synchronize ]
+    types: [opened, synchronize]
 
 jobs:
   code-review:
@@ -39,4 +39,3 @@ jobs:
           temperature: 0.2
           max_tokens: 10000
           INCLUDE_PATTERNS: '*.js,*.ts,*.jsx,*.tsx'
-
