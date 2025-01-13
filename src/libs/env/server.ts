@@ -1,8 +1,10 @@
+'use server'
+
 import { z } from 'zod'
 import { serverEnvSchema } from '@/libs/env/schemas'
 import type { ServerEnv } from '@/libs/env/schemas'
 
-function validateServerEnv(): ServerEnv {
+async function validateServerEnv(): Promise<ServerEnv> {
   if (typeof window !== 'undefined') {
     throw new Error('이 코드는 클라이언트 환경에서 실행할 수 없습니다.')
   }
@@ -22,4 +24,6 @@ function validateServerEnv(): ServerEnv {
   }
 }
 
-export const serverEnv = validateServerEnv()
+export async function getServerEnv(): Promise<ServerEnv> {
+  return await validateServerEnv()
+}
