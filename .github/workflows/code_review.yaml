@@ -37,5 +37,5 @@ jobs:
             Balance critique with positive feedback. Keep explanations educational and actionable.
           top_p: 0.4
           temperature: 0.2
-          max_tokens: 10000
+          max_tokens: 4000
           INCLUDE_PATTERNS: '*.js,*.ts,*.jsx,*.tsx'
