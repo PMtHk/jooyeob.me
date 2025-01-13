@@ -12,6 +12,8 @@
     "test": "echo \"No Test Specified - Done\" && exit 0"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.47.12",
     "next": "15.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
