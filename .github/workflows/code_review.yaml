@@ -1,0 +1,42 @@
+name: AI Code Review
+
+permissions:
+  contents: read
+  pull-requests: write
+
+on:
+  pull_request:
+    branches:
+      - dev
+    types: [ opened, synchronize ]
+
+jobs:
+  code-review:
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'review_requested') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: ChatGPT
+        uses: anc95/ChatGPT-CodeReview@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          MODEL: gpt-3.5-turbo
+          PROMPT: |
+            Please provide a constructive code review for a junior developer, focusing on:
+
+            1. Code organization & readability (naming, structure, complexity)
+            2. Basic security & error handling
+            3. Performance considerations
+            4. Best practices (reusability, SOLID principles, testability)
+
+            For each issue:
+            - Explain why it matters
+            - Show example of improvement
+            - Mention relevant best practices
+
+            Balance critique with positive feedback. Keep explanations educational and actionable.
+          top_p: 0.4
+          temperature: 0.2
+          max_tokens: 10000
+          INCLUDE_PATTERNS: '*.js,*.ts,*.jsx,*.tsx'
+
