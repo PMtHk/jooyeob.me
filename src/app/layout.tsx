@@ -1,11 +1,11 @@
-import React from 'react'
-import { pretendard } from '@/fonts'
+import type { ReactNode } from 'react'
+import { pretendard } from '@/shared/utils/fonts'
 import './globals.css'
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode
 }>) {
   return (
     <html lang='ko'>
