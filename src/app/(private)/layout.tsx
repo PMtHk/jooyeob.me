@@ -1,8 +1,14 @@
+import type { Metadata } from 'next'
 import React from 'react'
 import { pretendard } from '@/fonts'
-import './globals.css'
+import '../globals.css'
 
-export default function RootLayout({
+export const metadata: Metadata = {
+  title: '내 블로그',
+  description: '블로그 관리 페이지',
+}
+
+export default function PrivateLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
