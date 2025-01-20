@@ -1,8 +1,8 @@
 'use server'
 
 import { z } from 'zod'
-import { serverEnvSchema } from '@/libs/env/schemas'
-import type { ServerEnv } from '@/libs/env/schemas'
+import { serverEnvSchema } from '@/shared/libs/env/schemas'
+import type { ServerEnv } from '@/shared/libs/env/schemas'
 
 async function validateServerEnv(): Promise<ServerEnv> {
   if (typeof window !== 'undefined') {
