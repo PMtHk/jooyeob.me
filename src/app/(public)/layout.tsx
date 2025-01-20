@@ -1,6 +1,6 @@
+import type { ReactNode } from 'react'
 import type { Metadata } from 'next'
-import React from 'react'
-import { Header, Footer } from '@/components'
+import { Header, Footer } from '@/shared/ui'
 
 export const metadata: Metadata = {
   title: 'yeob 블로그',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function PublicLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode
 }>) {
   return (
     <>

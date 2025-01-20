@@ -1,4 +1,4 @@
-import { ICommand } from '@uiw/react-md-editor'
+import type { ICommand } from '@uiw/react-md-editor'
 
 export const Heading1: ICommand = {
   name: 'heading1',

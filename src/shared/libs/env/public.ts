@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import { publicEnvSchema } from '@/libs/env/schemas'
-import type { PublicEnv } from '@/libs/env/schemas'
+import { publicEnvSchema } from '@/shared/libs/env/schemas'
+import type { PublicEnv } from '@/shared/libs/env/schemas'
 
 function validatePublicEnv(): PublicEnv {
   try {

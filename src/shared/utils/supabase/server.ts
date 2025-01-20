@@ -2,7 +2,7 @@
 
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
-import { publicEnv, getServerEnv } from '@/libs/env'
+import { publicEnv, getServerEnv } from '@/shared/libs/env'
 
 export async function createClient() {
   const serverEnv = await getServerEnv()
