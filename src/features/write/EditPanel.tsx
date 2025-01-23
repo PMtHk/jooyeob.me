@@ -1,13 +1,14 @@
 import type { ReactElement, ReactNode } from 'react'
-import { Editor } from '@/features/editor'
-import { TagInputList, Title } from '@/features/write/components'
+import Editor from '@/features/editor'
 import { Button } from '@/shared/ui'
+import { TagInputList, Title } from '@/features/write/components'
+
 
 interface EditPanelProps {
   openPublishPanel: () => void
 }
 
-export function EditPanel({ openPublishPanel }: Readonly<EditPanelProps>) {
+export default function EditPanel({ openPublishPanel }: Readonly<EditPanelProps>) {
   return (
     <Panel>
       <Header>
@@ -30,6 +31,14 @@ export function EditPanel({ openPublishPanel }: Readonly<EditPanelProps>) {
         </FooterGroup>
       </Footer>
     </Panel>
+  )
+}
+
+export function EditPanelFallback() {
+  return (
+    <div className='w-screen h-screen flex items-center justify-center'>
+      편집기를 불러오는 중입니다.
+    </div>
   )
 }
 
