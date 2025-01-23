@@ -1,9 +1,10 @@
 import type { ReactElement, ReactNode } from 'react'
 import { Button } from '@/shared/ui'
 import { useWrite } from '@/features/write/hooks/useWrite'
-import { createPostAction } from '@/app/(private)/write/actions'
-import type { PostInsert } from '@/features/write/apis'
+
 import { Category, Series, Summary, Thumbnail, URL } from '@/features/write/components'
+import { createPost } from '@/features/write/actions'
+import type { CreatePostDto } from '@/features/write/actions'
 
 interface PublishPanelProps {
   isOpen: boolean
@@ -11,19 +12,33 @@ interface PublishPanelProps {
 }
 
 export default function PublishPanel({ isOpen, close }: Readonly<PublishPanelProps>) {
-  const { title, content, thumbnailURL, summary, url } = useWrite()
+  const { title, tags, content, thumbnailURL, summary, url, category } = useWrite()
+
+  const getCategoryId = (category: 'dev' | 'study' | 'review') => {
+    switch (category) {
+      case 'dev':
+        return 1
+      case 'study':
+        return 2
+      case 'review':
+        return 3
+      default:
+        return 1
+    }
+  }
 
   const handlePublish = async () => {
-    const newPost: PostInsert = {
+    const newPost: CreatePostDto = {
       title,
       content,
+      tags,
       thumbnail_url: thumbnailURL,
       summary,
-      category_id: 1,
+      category_id: getCategoryId(category),
       slug: url,
     }
 
-    await createPostAction(newPost)
+    await createPost(newPost)
   }
 
   return (
