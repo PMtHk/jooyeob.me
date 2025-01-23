@@ -1,13 +1,31 @@
 import type { ReactElement, ReactNode } from 'react'
-import { Category, Series, Summary, Thumbnail, URL } from '@/features/write/components'
 import { Button } from '@/shared/ui'
+import { useWrite } from '@/features/write/hooks/useWrite'
+import { createPostAction } from '@/app/(private)/write/actions'
+import type { PostInsert } from '@/features/write/apis'
+import { Category, Series, Summary, Thumbnail, URL } from '@/features/write/components'
 
 interface PublishPanelProps {
   isOpen: boolean
   close: () => void
 }
 
-export function PublishPanel({ isOpen, close }: Readonly<PublishPanelProps>) {
+export default function PublishPanel({ isOpen, close }: Readonly<PublishPanelProps>) {
+  const { title, content, thumbnailURL, summary, url } = useWrite()
+
+  const handlePublish = async () => {
+    const newPost: PostInsert = {
+      title,
+      content,
+      thumbnail_url: thumbnailURL,
+      summary,
+      category_id: 1,
+      slug: url,
+    }
+
+    await createPostAction(newPost)
+  }
+
   return (
     <Panel isOpen={isOpen}>
       <Container>
@@ -27,7 +45,7 @@ export function PublishPanel({ isOpen, close }: Readonly<PublishPanelProps>) {
             <Button variant='ghost' onClick={close}>
               취소
             </Button>
-            <Button>업로드하기</Button>
+            <Button onClick={handlePublish}>출간하기</Button>
           </ControlGroup>
         </InfoSection>
       </Container>

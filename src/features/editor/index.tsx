@@ -1,7 +1,4 @@
-'use client'
-
-import dynamic from 'next/dynamic'
-import type { MDEditorProps } from '@uiw/react-md-editor'
+import MDEditor from '@uiw/react-md-editor'
 import { divider } from '@uiw/react-md-editor/commands'
 import {
   Heading1,
@@ -32,10 +29,6 @@ const commandsList = [
   Image,
   CodeBlock,
 ]
-
-const MDEditor = dynamic<MDEditorProps>(() => import('@uiw/react-md-editor'), {
-  ssr: false,
-})
 
 export default function Editor() {
   const { content, setContent } = useWrite()
