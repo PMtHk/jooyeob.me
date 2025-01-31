@@ -1,4 +1,5 @@
 import type { ReactElement, ReactNode } from 'react'
+import { redirect } from 'next/navigation'
 import Editor from '@/features/editor'
 import { Button } from '@/shared/ui'
 import { TagInputList, Title } from '@/features/write/components'
@@ -8,6 +9,10 @@ interface EditPanelProps {
 }
 
 export default function EditPanel({ openPublishPanel }: Readonly<EditPanelProps>) {
+  const handleGoBack = () => {
+    redirect('/')
+  }
+
   return (
     <Panel>
       <Header>
@@ -19,7 +24,7 @@ export default function EditPanel({ openPublishPanel }: Readonly<EditPanelProps>
       <Editor />
 
       <Footer>
-        <Button variant='ghost' className='text-foreground'>
+        <Button variant='ghost' className='text-foreground' onClick={handleGoBack}>
           뒤로가기
         </Button>
         <FooterGroup>
