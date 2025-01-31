@@ -37,7 +37,7 @@ export const initialState: WriteState = {
 export const writeReducer = (state: WriteState, action: WriteAction): WriteState => {
   switch (action.type) {
     case 'SET_TITLE':
-      return { ...state, title: action.payload }
+      return { ...state, title: action.payload, url: action.payload.replaceAll(" ", "-") }
     case 'SET_CONTENT':
       return { ...state, content: action.payload }
     case 'SET_TAGS':
