@@ -6,7 +6,7 @@ export interface WriteState {
   summary: string
   category: 'dev' | 'study' | 'review'
   url: string
-  series: string
+  series: number
 }
 
 export type WriteAction =
@@ -20,7 +20,7 @@ export type WriteAction =
   | { type: 'SET_SUMMARY'; payload: string }
   | { type: 'SET_CATEGORY'; payload: 'dev' | 'study' | 'review' }
   | { type: 'SET_URL'; payload: string }
-  | { type: 'SET_SERIES'; payload: string }
+  | { type: 'SET_SERIES'; payload: number }
   | { type: 'REMOVE_SERIES' }
 
 export const initialState: WriteState = {
@@ -31,7 +31,7 @@ export const initialState: WriteState = {
   summary: '',
   category: 'dev',
   url: '',
-  series: '',
+  series: -1,
 }
 
 export const writeReducer = (state: WriteState, action: WriteAction): WriteState => {
@@ -61,7 +61,7 @@ export const writeReducer = (state: WriteState, action: WriteAction): WriteState
     case 'SET_SERIES':
       return { ...state, series: action.payload }
     case 'REMOVE_SERIES':
-      return { ...state, series: '' }
+      return { ...state, series: -1 }
     default:
       throw new Error('Unhandled action')
   }

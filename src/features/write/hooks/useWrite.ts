@@ -16,7 +16,7 @@ export function useWrite() {
     setCategory: (category: 'dev' | 'study' | 'review') =>
       dispatch({ type: 'SET_CATEGORY', payload: category }),
     setURL: (url: string) => dispatch({ type: 'SET_URL', payload: url }),
-    setSeries: (series: string) => dispatch({ type: 'SET_SERIES', payload: series }),
+    setSeries: (series: number) => dispatch({ type: 'SET_SERIES', payload: series }),
     removeSeries: () => dispatch({ type: 'REMOVE_SERIES' }),
   }
 }
