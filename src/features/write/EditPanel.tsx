@@ -3,7 +3,6 @@ import Editor from '@/features/editor'
 import { Button } from '@/shared/ui'
 import { TagInputList, Title } from '@/features/write/components'
 
-
 interface EditPanelProps {
   openPublishPanel: () => void
 }

@@ -5,12 +5,12 @@ import type { Dispatch, ReactNode } from 'react'
 import { writeReducer, initialState } from './WriteReducer'
 import type { WriteAction, WriteState } from './WriteReducer'
 
-interface WriteContextType {
+interface IWriteState {
   state: WriteState
   dispatch: Dispatch<WriteAction>
 }
 
-const WriteContext = createContext<WriteContextType | undefined>(undefined)
+const WriteContext = createContext<IWriteState | undefined>(undefined)
 
 export function WriteProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(writeReducer, initialState)
