@@ -3,9 +3,10 @@ import { redirect } from 'next/navigation'
 import { Button } from '@/shared/ui'
 import { useWrite } from '@/features/write/hooks/useWrite'
 
-import { Category, Series, Summary, Thumbnail, URL } from '@/features/write/components'
+import { Category, Summary, Thumbnail, URL } from '@/features/write/components'
 import { createPost } from '@/features/write/actions'
 import type { CreatePostDto } from '@/features/write/actions'
+import { SeriesManager } from '@/features/series/components/SeriesMananger'
 
 interface PublishPanelProps {
   isOpen: boolean
@@ -62,7 +63,7 @@ export default function PublishPanel({ isOpen, close }: Readonly<PublishPanelPro
           <div className='flex flex-col'>
             <Category />
             <URL />
-            <Series />
+            <SeriesManager />
           </div>
 
           <ControlGroup>
