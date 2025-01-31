@@ -5,6 +5,19 @@ const nextConfig: NextConfig = removeImports()({
   webpack(config) {
     return config
   },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '8mb',
+    },
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'lawnhtaqgtzovjhzthxo.supabase.co',
+      },
+    ],
+  },
 })
 
 export default nextConfig
