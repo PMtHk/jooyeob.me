@@ -1,4 +1,5 @@
 import type { ReactElement, ReactNode } from 'react'
+import { redirect } from 'next/navigation'
 import { Button } from '@/shared/ui'
 import { useWrite } from '@/features/write/hooks/useWrite'
 
@@ -12,7 +13,7 @@ interface PublishPanelProps {
 }
 
 export default function PublishPanel({ isOpen, close }: Readonly<PublishPanelProps>) {
-  const { title, tags, content, thumbnailURL, summary, url, category } = useWrite()
+  const { title, tags, content, thumbnailURL, summary, url, category, series } = useWrite()
 
   const getCategoryId = (category: 'dev' | 'study' | 'review') => {
     switch (category) {
@@ -36,9 +37,17 @@ export default function PublishPanel({ isOpen, close }: Readonly<PublishPanelPro
       summary,
       category_id: getCategoryId(category),
       slug: url,
+      series_id: series,
     }
 
     await createPost(newPost)
+
+    // TODO: 글 작성 토스트 메시지 추가
+
+    // page 이동
+    close()
+
+    redirect('/')
   }
 
   return (

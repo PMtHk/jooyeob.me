@@ -9,8 +9,8 @@ export function Summary() {
   }
 
   return (
-    <div className='mt-6'>
-      <span className='pl-1 text-display-xs'>{title}</span>
+    <div className='mt-2'>
+      <span className='text-display-xs'>{title}</span>
       <textarea
         value={summary}
         onChange={handleInput}
