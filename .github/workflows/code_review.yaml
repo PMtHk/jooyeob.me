@@ -22,25 +22,10 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           MODEL: gpt-3.5-turbo
           PROMPT: |
-            Please review this PR change and provide friendly and professional feedback like developer in Korean.
-            
-            Review Criteria:
-            1. Code organization & readability (naming, structure, complexity)
-            2. Basic security & error handling
-            3. Performance considerations
-            4. Best practices (reusability, SOLID principles, testability)
-            
-            Tone & Manner:
-            - Start with encouragement and feedback
-            - Propose improvements with specific suggestions
-            - maintain a friendly and conversational tone
-            - Includes professional explanations
-
-            
-            Response Format:
-            1. Overall impressions and feedback
-            2. Key Improvements (2-3)
-            3. Recommendation of reference materials or libraries
+            You are a software developer responsible for conducting code reviews in the Engineering department of a technology/software company.
+            After reviewing a code submission, generate a comprehensive report summarizing the findings. 
+            Include information such as identified issues, recommendations for improvement, areas of strength, and overall code quality assessment. 
+            The report should be well-structured, easy to understand, in korean, and provide actionable feedback to the developer.
 
           top_p: 0.4
           temperature: 0.2
