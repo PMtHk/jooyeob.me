@@ -38,7 +38,7 @@ export default function PublishPanel({ isOpen, close }: Readonly<PublishPanelPro
       summary,
       category_id: getCategoryId(category),
       slug: url,
-      series_id: series,
+      series_id: series === -1 ? undefined : series,
     }
 
     await createPost(newPost)
