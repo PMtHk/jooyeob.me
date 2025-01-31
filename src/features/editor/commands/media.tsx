@@ -1,4 +1,5 @@
 import type { ICommand } from '@uiw/react-md-editor'
+import { uploadImage } from '@/features/image/actions'
 
 export const Image: ICommand = {
   name: 'image',
@@ -16,11 +17,34 @@ export const Image: ICommand = {
     </svg>
   ),
   execute: (state, api) => {
-    let modifyText = `![${state.selectedText}](url)`
-    if (!state.selectedText) {
-      modifyText = '![이미지 설명](url)'
+    const input = document.createElement('input')
+    input.type = 'file'
+    input.accept = 'image/*'
+
+    input.onchange = async (e) => {
+      const file = (e.target as HTMLInputElement).files?.[0]
+      if (!file) {
+        return
+      }
+
+      const {
+        selection: { start },
+      } = state
+
+      const placeholder = `![업로드중...](${file.name})`
+      api.replaceSelection(placeholder)
+
+      try {
+        const { url } = await uploadImage(file)
+
+        api.setSelectionRange({ start, end: start + placeholder.length })
+        api.replaceSelection(`![이미지 설명](${url})`)
+      } catch (error) {
+        api.replaceSelection('')
+        console.error('Upload failed:', error)
+      }
     }
 
-    api.replaceSelection(modifyText)
+    input.click()
   },
 }
