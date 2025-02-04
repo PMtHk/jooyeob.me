@@ -128,6 +128,13 @@ export type Database = {
             referencedRelation: 'tags'
             referencedColumns: ['id']
           },
+          {
+            foreignKeyName: 'posts_tags_tag_id_fkey'
+            columns: ['tag_id']
+            isOneToOne: false
+            referencedRelation: 'tags_with_post_count'
+            referencedColumns: ['id']
+          },
         ]
       }
       series: {
@@ -171,7 +178,14 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      tags_with_post_count: {
+        Row: {
+          id: number | null
+          name: string | null
+          post_count: number | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       [_ in never]: never
