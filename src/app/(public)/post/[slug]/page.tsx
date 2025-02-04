@@ -1,6 +1,25 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import { getPost } from '@/shared/libs/posts/actions'
 import { getKST } from '@/shared/utils/getKST'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const rawSlug = (await params).slug
+  const slug = decodeURIComponent(rawSlug)
+  const { title, summary, thumbnail_url } = await getPost(slug)
+
+  return {
+    title: title + ' | yeob 블로그',
+    description: summary,
+    openGraph: {
+      images: [thumbnail_url ?? ''],
+    },
+  }
+}
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const rawSlug = (await params).slug
