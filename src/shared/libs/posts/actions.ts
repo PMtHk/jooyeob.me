@@ -3,7 +3,10 @@
 import { createClient } from '@/shared/utils/supabase/client'
 import type { Tables } from '@/shared/utils/supabase/types'
 
-export type ClientPost = Pick<Tables<'posts'>, 'title' | 'summary' | 'created_at' | 'slug' | 'thumbnail_url'>
+export type ClientPost = Pick<
+  Tables<'posts'>,
+  'title' | 'summary' | 'created_at' | 'slug' | 'thumbnail_url'
+>
 export type ClientPosts = Array<ClientPost>
 
 export async function getPosts(): Promise<ClientPosts> {
@@ -53,13 +56,16 @@ export async function getTrendingPosts(): Promise<ClientPosts> {
   return posts
 }
 
-export type ClientTag = Pick<Tables<'tags'>, 'id' | 'name'>
+export type ClientTag = Tables<'tags_with_post_count'>
 export type ClientTags = Array<ClientTag>
 
 export async function getTags(): Promise<ClientTags> {
   const supabase = createClient()
 
-  const { data: tags, error } = await supabase.from('tags').select('id, name')
+  const { data: tags, error } = await supabase
+    .from('tags_with_post_count')
+    .select('*')
+    .order('post_count', { ascending: false })
 
   if (error) throw error
 

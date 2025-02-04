@@ -16,18 +16,20 @@ export function Post({ title, summary, created_at, slug, thumbnail_url }: Client
           </span>
           <span className='text-body-sm text-alt-700 dark:text-alt-600'>{getKST(created_at!)}</span>
         </div>
-        <div
-          className='min-w-[130px] relative flex overflow-hidden rounded-lg'
-          style={{ width: '130px', height: '90px' }}
-        >
-          <Image
-            src={thumbnail_url!}
-            alt={title}
-            fill
-            style={{ objectFit: 'fill' }}
-            className='rounded-lg'
-          />
-        </div>
+        {thumbnail_url && (
+          <div
+            className='min-w-[130px] relative flex overflow-hidden rounded-lg'
+            style={{ width: '130px', height: '90px' }}
+          >
+            <Image
+              src={thumbnail_url!}
+              alt={title}
+              fill
+              style={{ objectFit: 'fill' }}
+              className='rounded-lg'
+            />
+          </div>
+        )}
       </Link>
     </li>
   )
