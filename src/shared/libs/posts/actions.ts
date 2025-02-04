@@ -52,3 +52,16 @@ export async function getTrendingPosts(): Promise<ClientPosts> {
 
   return posts
 }
+
+export type ClientTag = Pick<Tables<'tags'>, 'id' | 'name'>
+export type ClientTags = Array<ClientTag>
+
+export async function getTags(): Promise<ClientTags> {
+  const supabase = createClient()
+
+  const { data: tags, error } = await supabase.from('tags').select('id, name')
+
+  if (error) throw error
+
+  return tags
+}
