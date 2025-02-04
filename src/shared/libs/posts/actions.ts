@@ -3,7 +3,7 @@
 import { createClient } from '@/shared/utils/supabase/client'
 import type { Tables } from '@/shared/utils/supabase/types'
 
-export type ClientPost = Pick<Tables<'posts'>, 'title' | 'summary' | 'created_at' | 'slug'>
+export type ClientPost = Pick<Tables<'posts'>, 'title' | 'summary' | 'created_at' | 'slug' | 'thumbnail_url'>
 export type ClientPosts = Array<ClientPost>
 
 export async function getPosts(): Promise<ClientPosts> {
@@ -11,7 +11,7 @@ export async function getPosts(): Promise<ClientPosts> {
 
   const { data: posts, error } = await supabase
     .from('posts')
-    .select('title, summary, created_at, slug')
+    .select('title, summary, created_at, slug, thumbnail_url')
     .order('created_at', { ascending: false })
 
   if (error) throw error
@@ -44,7 +44,7 @@ export async function getTrendingPosts(): Promise<ClientPosts> {
 
   const { data: posts, error } = await supabase
     .from('posts')
-    .select('title, summary, created_at, slug')
+    .select('title, summary, created_at, slug, thumbnail_url')
     .order('created_at', { ascending: false })
     .range(0, 2)
 

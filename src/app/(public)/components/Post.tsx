@@ -1,12 +1,13 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { ClientPost } from '@/shared/libs/posts/actions'
 import { getKST } from '@/shared/utils/getKST'
 
-export function Post({ title, summary, created_at, slug }: ClientPost) {
+export function Post({ title, summary, created_at, slug, thumbnail_url }: ClientPost) {
   return (
     <li>
       <Link href={`/post/${slug}`} className='flex py-6 group'>
-        <div className='flex flex-grow flex-col pr-5'>
+        <div className='flex flex-grow flex-col pr-4'>
           <span className='text-display-xs mb-1.5 group-hover:text-primary md:text-display-sm'>
             {title}
           </span>
@@ -15,7 +16,18 @@ export function Post({ title, summary, created_at, slug }: ClientPost) {
           </span>
           <span className='text-body-sm text-alt-700 dark:text-alt-600'>{getKST(created_at!)}</span>
         </div>
-        <div className='w-full rounded-lg border max-w-[130px]'></div>
+        <div
+          className='min-w-[130px] relative flex overflow-hidden rounded-lg'
+          style={{ width: '130px', height: '90px' }}
+        >
+          <Image
+            src={thumbnail_url!}
+            alt={title}
+            fill
+            style={{ objectFit: 'fill' }}
+            className='rounded-lg'
+          />
+        </div>
       </Link>
     </li>
   )
