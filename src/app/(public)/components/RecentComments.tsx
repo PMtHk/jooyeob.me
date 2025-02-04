@@ -6,36 +6,37 @@ export function RecentComments() {
         <li>
           <a
             href='#'
-            className='mt-3 flex flex-col rounded-lg p-5 group bg-alt-50 hover:bg-alt-100 dark:bg-alt-800 dark:hover:bg-alt-900'
+            className='mt-3 flex flex-col rounded-lg p-3 group bg-alt-50 hover:bg-alt-100 dark:bg-alt-800 dark:hover:bg-alt-900'
           >
             <div className='flex items-center'>
               <div className='h-8 w-8 rounded-full bg-alt-200'></div>
-              <span className='ml-2 font-bold text-body-sm'>나주엽</span>
+              <span className='ml-2 font-bold text-body-sm'>EUNJI</span>
             </div>
             <div className='mt-2 text-body-sm text-alt-700 text-overflow dark:text-alt-500'>
-              감사합니다. 어쩌구 저쩌구의 댓글을 남겨주셔서. 텍스트가 길면 어쩌구 저쩌구. 텍스트가
-              길면 어쩌구 저쩌구. 텍스트가 길면 어쩌구 저쩌구
+              이렇게 자세하고 친절한 블로그 글을 발견하게 되어 도움 많이 받았습니다! 좋은 글
+              감사합니다 :)
             </div>
             <div className='mt-2 text-default-xs text-alt-500 text-overflow group-hover:text-primary dark:text-alt-500'>
-              외부 API 규칙을 준수하며 병렬로 많은 요청을 처리하기
+              Github Actions 과 AWS CodeDeploy 를 사용한 Blue/Green 배포 자동화
             </div>
           </a>
         </li>
+
         <li>
           <a
             href='#'
-            className='mt-3 flex flex-col rounded-lg p-5 group bg-alt-50 hover:bg-alt-100 dark:bg-alt-800 dark:hover:bg-alt-900'
+            className='mt-3 flex flex-col rounded-lg p-3 group bg-alt-50 hover:bg-alt-100 dark:bg-alt-800 dark:hover:bg-alt-900'
           >
             <div className='flex items-center'>
               <div className='h-8 w-8 rounded-full bg-alt-200'></div>
-              <span className='ml-2 font-bold text-body-sm'>나주엽</span>
+              <span className='ml-2 font-bold text-body-sm'>chance</span>
             </div>
             <div className='mt-2 text-body-sm text-alt-700 text-overflow dark:text-alt-500'>
-              감사합니다. 어쩌구 저쩌구의 댓글을 남겨주셔서. 텍스트가 길면 어쩌구 저쩌구. 텍스트가
-              길면 어쩌구 저쩌구. 텍스트가 길면 어쩌구 저쩌구
+              공식 문서에서는 inter.variable 과 같이 className 에 variable 만 넣어주는데, font
+              pretendard 도 같이 넣어줘야 하는 이유를 알 수 있을까요?
             </div>
             <div className='mt-2 text-default-xs text-alt-500 text-overflow group-hover:text-primary dark:text-alt-500'>
-              외부 API 규칙을 준수하며 병렬로 많은 요청을 처리하기
+              Next.js LocalFont 적용하기 (feat. Pretendard)
             </div>
           </a>
         </li>
