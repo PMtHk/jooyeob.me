@@ -2,6 +2,7 @@
 
 import { createClient } from '@/shared/utils/supabase/client'
 import type { Tables } from '@/shared/utils/supabase/types'
+import { categories } from '@/shared/libs/categories/constants'
 
 export type ClientPost = Pick<
   Tables<'posts'>,
@@ -9,17 +10,24 @@ export type ClientPost = Pick<
 >
 export type ClientPosts = Array<ClientPost>
 
-export async function getPosts(): Promise<ClientPosts> {
+export async function getPosts(category?: string) {
   const supabase = createClient()
 
-  const { data: posts, error } = await supabase
+  const categoryId = categories.find((c) => c.slug === category)?.id
+
+  let query = supabase
     .from('posts')
-    .select('title, summary, created_at, slug, thumbnail_url')
-    .order('created_at', { ascending: false })
+    .select('title, summary, created_at, slug, thumbnail_url, category_id')
+
+  if (categoryId) {
+    query = query.eq('category_id', categoryId)
+  }
+
+  const { data: posts, error } = await query.order('created_at', { ascending: false })
 
   if (error) throw error
 
-  return posts
+  return posts || []
 }
 
 export type ClientPostDetail = Tables<'posts'> & {
@@ -29,6 +37,7 @@ export type ClientPostDetail = Tables<'posts'> & {
 
 export async function getPost(slug: string): Promise<ClientPostDetail> {
   const supabase = createClient()
+  console.log(slug)
 
   const { data: post, error } = await supabase
     .from('posts')
