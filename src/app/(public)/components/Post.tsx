@@ -25,7 +25,7 @@ export function Post({ title, summary, created_at, slug, thumbnail_url }: Client
               src={thumbnail_url!}
               alt={title}
               fill
-              sizes="20vw"
+              sizes='20vw'
               style={{ objectFit: 'fill' }}
               className='rounded-lg group-hover:scale-110 transition-transform'
             />
