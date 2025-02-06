@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getPosts } from '@/shared/libs/posts/actions'
+import { getPosts, getTags } from '@/shared/libs/posts/actions'
 import { Post } from '@/app/(public)/components/Post'
 import { HeroBanner } from '@/app/(public)/components/HeroBanner'
 import { Trendings } from '@/app/(public)/components/Trendings'
@@ -11,10 +11,17 @@ import { cn } from '@/shared/utils/cn'
 export default async function Home({
   searchParams,
 }: {
-  searchParams: Promise<{ category: string }>
+  searchParams: Promise<{ category: string; tag: string | string[] }>
 }) {
-  const currentCategory = (await searchParams).category ?? ''
-  const posts = await getPosts(currentCategory)
+  const params = await searchParams
+  const selectedCategory = params.category ?? ''
+  const selectedTags = params.tag ? (Array.isArray(params.tag) ? params.tag : [params.tag]) : []
+
+  const posts = await getPosts({
+    category: selectedCategory,
+    tags: selectedTags,
+  })
+  const tags = await getTags()
 
   return (
     <div className='min-h-screen w-full pb-12'>
@@ -26,7 +33,8 @@ export default async function Home({
             <Link
               href='/'
               className={cn('px-4 pb-2 text-gray-500', {
-                'border-b-2 border-black font-semibold dark:border-alt-700': currentCategory === '',
+                'border-b-2 border-black font-semibold dark:border-alt-700':
+                  selectedCategory === '',
               })}
             >
               전체
@@ -37,7 +45,7 @@ export default async function Home({
                 href={`/?category=${category.slug}`}
                 className={cn('px-4 pb-2 text-gray-500', {
                   'border-b-2 border-black font-semibold dark:border-alt-700':
-                    category.slug === currentCategory,
+                    category.slug === selectedCategory,
                 })}
               >
                 {category.name}
@@ -55,7 +63,7 @@ export default async function Home({
         <div className='hidden flex-col gap-4 border-l px-6 w-[300px] lg:flex'>
           <Trendings />
           <RecentComments />
-          <Tags />
+          <Tags tags={tags} selectedTags={selectedTags} />
         </div>
       </div>
     </div>
