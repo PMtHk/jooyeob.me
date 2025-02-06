@@ -31,9 +31,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   return (
     <div className='min-h-screen w-full'>
-      <div className='mx-auto flex flex-col p-6 max-w-[700px] break-keep'>
+      <div className='mx-auto flex flex-col p-10 max-w-[700px] break-keep'>
         <article>
-          <header className='pt-9'>
+          <header>
             <h1 className='mt-9 text-display-lg md:text-display-xl'>{title}</h1>
             <div className='mt-5 flex flex-wrap'>
               {tags.map((tag) => (
@@ -66,7 +66,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             </div>
           </header>
           <div
-            className='mt-12 prose-code:rounded-md prose-code:px-1 prose-blockquote:not-italic prose prose-blockquote:border-primary-200 prose-a:text-primary prose-code:before:content-none prose-code:after:content-none prose-code:bg-alt-300 prose-code:py-0.5 dark:prose-code:bg-alt-700 dark:prose-invert'
+            className='mt-12 prose-code:rounded-md prose-code:px-1 prose-blockquote:not-italic prose prose-blockquote:border-primary-200 prose-blockquote:pr-1 prose-blockquote:rounded-sm prose-blockquote:bg-alt-100  prose-a:text-primary prose-code:before:content-none prose-code:after:content-none prose-code:bg-alt-300 prose-code:py-0.5 dark:prose-code:bg-alt-700 dark:prose-invert dark:prose-blockquote:bg-alt-800'
             dangerouslySetInnerHTML={{ __html: contentHTML }}
           />
           <button className='my-12 px-4 py-3'>공유</button>
