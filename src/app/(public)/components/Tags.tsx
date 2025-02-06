@@ -30,16 +30,14 @@ export function Tags({ tags, selectedTags }: TagsProps) {
 
   return (
     <section>
-      <span className="text-default-lg text-alt-600">태그</span>
-      <div className="mt-3 flex flex-wrap">
+      <span className='text-default-lg text-alt-600'>태그</span>
+      <div className='mt-3 flex flex-wrap'>
         {tags.map((tag) => {
           if (!tag.name) return null
 
           const isSelected = selectedTags.includes(tag.name)
-          const baseClasses =
-            'mb-2 cursor-pointer rounded-full px-2 py-1 text-body-md mr-1.5'
-          const selectedClasses =
-            'bg-blue-500 text-white hover:bg-blue-600'
+          const baseClasses = 'mb-2 cursor-pointer rounded-full px-2 py-1 text-body-md mr-1.5'
+          const selectedClasses = 'bg-blue-500 text-white hover:bg-blue-600'
           const unselectedClasses =
             'bg-alt-100 text-alt-700 hover:bg-alt-200 dark:text-alt-300 dark:bg-alt-800 dark:hover:bg-alt-900'
 
@@ -47,9 +45,7 @@ export function Tags({ tags, selectedTags }: TagsProps) {
             <span
               key={tag.id}
               onClick={() => handleTagClick(tag.name!)}
-              className={`${baseClasses} ${
-                isSelected ? selectedClasses : unselectedClasses
-              }`}
+              className={`${baseClasses} ${isSelected ? selectedClasses : unselectedClasses}`}
             >
               {tag.name}
             </span>

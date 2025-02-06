@@ -46,10 +46,13 @@ export async function getPosts({ category, tags }: { category?: string; tags?: s
       throw postsTagsError
     }
 
-    const counts = postsTagsData?.reduce((acc, { post_id }) => {
-      acc[post_id] = (acc[post_id] || 0) + 1
-      return acc
-    }, {} as Record<string, number>)
+    const counts = postsTagsData?.reduce(
+      (acc, { post_id }) => {
+        acc[post_id] = (acc[post_id] || 0) + 1
+        return acc
+      },
+      {} as Record<string, number>,
+    )
 
     const matchingPostIds = Object.keys(counts)
       .filter((postId) => counts[postId] === tagIds.length)
