@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import Image from 'next/image'
 import { getPost } from '@/shared/libs/posts/actions'
 import { getKST } from '@/shared/utils/getKST'
@@ -46,12 +47,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               ))}
             </div>
             <section className='mt-5'>
-              <div className='css-zn4dem esnk6d53'>
-                <div className='pt-2'>
-                  <span className='text-default-xl'>나주엽</span>
-                </div>
-                <div className='pt-1 text-default-md'>{getKST(created_at!)}</div>
+              <div className='pt-2'>
+                <span className='text-default-xl'>나주엽</span>
               </div>
+              <div className='pt-1 text-default-md'>{getKST(created_at!)}</div>
             </section>
 
             <div className='mt-12'>
@@ -78,7 +77,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           <div className='mt-12'>
             <h2 className='text-display-sm'>다른 글</h2>
             <div className='mt-6 flex flex-col gap-4'>
-              <a className='flex gap-4 group'>
+              <Link href='#' className='flex gap-4 group'>
                 <div className='flex-shrink-0 rounded-lg w-[100px] h-[100px] bg-alt-100 dark:bg-alt-800'></div>
                 <div className='flex flex-col pt-2'>
                   <h3 className='text-display-sm group-hover:text-primary lg:text-display-md'>
@@ -86,8 +85,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                   </h3>
                   <div className='mt-2 text-default-lg'>2024년 12월 19일</div>
                 </div>
-              </a>
-              <a className='flex gap-4 group'>
+              </Link>
+              <Link href='#' className='flex gap-4 group'>
                 <div className='flex-shrink-0 rounded-lg w-[100px] h-[100px] bg-alt-100 dark:bg-alt-800'></div>
                 <div className='flex flex-col pt-2'>
                   <h3 className='text-display-sm group-hover:text-primary lg:text-display-md'>
@@ -95,7 +94,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                   </h3>
                   <div className='mt-2 text-default-lg'>2024년 12월 19일</div>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
