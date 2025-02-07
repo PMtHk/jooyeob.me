@@ -1,7 +1,7 @@
 export const getKST = (dateString: string) => {
   const date = new Date(dateString)
 
-  const fomatter = new Intl.DateTimeFormat('ko-KR', {
+  const formatter = new Intl.DateTimeFormat('ko-KR', {
     timeZone: 'Asia/Seoul',
     year: 'numeric',
     month: 'numeric',
@@ -11,7 +11,7 @@ export const getKST = (dateString: string) => {
     hour12: false,
   })
 
-  const parts = fomatter.formatToParts(date)
+  const parts = formatter.formatToParts(date)
 
   const year = parts.find((part) => part.type === 'year')?.value
   const month = parts.find((part) => part.type === 'month')?.value
