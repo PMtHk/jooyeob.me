@@ -1,11 +1,13 @@
+import Link from 'next/link'
+
 export function RecentComments() {
   return (
     <section>
       <span className='text-default-lg text-alt-600'>최근 댓글</span>
       <ul className='list-none'>
         <li>
-          <a
-            href='#'
+          <Link
+            href='/'
             className='mt-3 flex flex-col rounded-lg p-3 group bg-alt-50 hover:bg-alt-100 dark:bg-alt-800 dark:hover:bg-alt-900'
           >
             <div className='flex items-center'>
@@ -19,12 +21,12 @@ export function RecentComments() {
             <div className='mt-2 text-default-xs text-alt-500 text-overflow group-hover:text-primary dark:text-alt-500'>
               Github Actions 과 AWS CodeDeploy 를 사용한 Blue/Green 배포 자동화
             </div>
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a
-            href='#'
+          <Link
+            href='/'
             className='mt-3 flex flex-col rounded-lg p-3 group bg-alt-50 hover:bg-alt-100 dark:bg-alt-800 dark:hover:bg-alt-900'
           >
             <div className='flex items-center'>
@@ -38,7 +40,7 @@ export function RecentComments() {
             <div className='mt-2 text-default-xs text-alt-500 text-overflow group-hover:text-primary dark:text-alt-500'>
               Next.js LocalFont 적용하기 (feat. Pretendard)
             </div>
-          </a>
+          </Link>
         </li>
       </ul>
     </section>
