@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 import { WriteProvider } from '@/features/write/contexts/WriteContext'
 import { EditPanelFallback } from '@/features/write/EditPanel'
 import PublishPanel from '@/features/write/PublishPanel'
+import { Preview } from '@/app/(private)/write/components/Preview'
 
 const EditPanel = dynamic(() => import('@/features/write/EditPanel'), {
   ssr: false,
@@ -20,8 +21,14 @@ export default function Page() {
 
   return (
     <WriteProvider>
-      <EditPanel openPublishPanel={openPublishPanel} />
-      <PublishPanel isOpen={isPublishPanelOpen} close={closePublishPanel} />
+      <div className="relative h-screen w-screen">
+        <div className='flex h-screen w-screen'>
+          <EditPanel openPublishPanel={openPublishPanel} />
+          <Preview />
+        </div>
+        <PublishPanel isOpen={isPublishPanelOpen} close={closePublishPanel} />
+      </div>
+
     </WriteProvider>
   )
 }
