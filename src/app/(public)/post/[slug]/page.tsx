@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { getPost } from '@/shared/libs/posts/actions'
 import { getKST } from '@/shared/utils/getKST'
 import { markdownToHTML } from '@/shared/libs/markdownToHTML'
+import { MarkdownViewer } from '@/shared/components/MarkdownViewer'
 
 export async function generateMetadata({
   params,
@@ -64,6 +65,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               />
             </div>
           </header>
+          <div className='mt-12'>
+            <MarkdownViewer html={contentHTML} />
+          </div>
           <div
             className='mt-12 prose-code:rounded-md prose-code:px-1 prose-blockquote:not-italic prose prose-blockquote:border-primary-200 prose-blockquote:pr-1 prose-blockquote:rounded-sm prose-blockquote:bg-alt-100  prose-a:text-primary prose-code:before:content-none prose-code:after:content-none prose-code:bg-alt-300 prose-code:py-0.5 dark:prose-code:bg-alt-700 dark:prose-invert dark:prose-blockquote:bg-alt-800'
             dangerouslySetInnerHTML={{ __html: contentHTML }}
