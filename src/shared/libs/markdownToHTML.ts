@@ -6,3 +6,7 @@ export const markdownToHTML = async (markdown: string) => {
   const content = await remark().use(gfm).use(html).process(markdown)
   return content.toString()
 }
+
+export const markdownToHTMLSync = (markdown: string) => {
+  return remark().use(gfm).use(html).processSync(markdown).toString()
+}
