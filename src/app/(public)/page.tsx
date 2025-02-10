@@ -1,12 +1,13 @@
 import Link from 'next/link'
-import { getPosts, getTags } from '@/shared/libs/posts/actions'
 import { Post } from '@/app/(public)/components/Post'
 import { HeroBanner } from '@/app/(public)/components/HeroBanner'
 import { Trendings } from '@/app/(public)/components/Trendings'
 import { RecentComments } from '@/app/(public)/components/RecentComments'
 import { Tags } from '@/app/(public)/components/Tags'
-import { categories } from '@/shared/libs/categories/constants'
-import { cn } from '@/shared/utils/cn'
+import { categories } from '@/lib/constants/category'
+import { cn } from '@/lib/util/cn'
+import { getPosts } from '@/app/(public)/post/actions/getPosts'
+import { getTags } from '@/app/(public)/post/actions/getTags'
 
 export default async function Home({
   searchParams,

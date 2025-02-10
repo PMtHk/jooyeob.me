@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import type { Metadata } from 'next'
-import { Header, Footer } from '@/shared/ui'
+import { Header, Footer } from '../../components/ui'
 
 export const metadata: Metadata = {
   title: 'yeob 블로그',
