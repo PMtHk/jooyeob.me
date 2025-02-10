@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import type { ClientPost } from '@/shared/libs/posts/actions'
-import { getKST } from '@/shared/utils/getKST'
-import { getTrendingPosts } from '@/shared/libs/posts/actions'
+import { getTrendingPosts } from '@/app/(public)/post/actions/getTrendingPosts'
+import type { ClientPost } from '@/app/(public)/post/actions/getPosts'
+import { getKST } from '@/lib/util/getKST'
 
 export async function Trendings() {
   const trendingPosts = await getTrendingPosts()

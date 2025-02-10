@@ -42,7 +42,7 @@ jobs:
       - name: Environment variables
         run: |
           touch ./.env.production
-          
+
           echo "${{ secrets.PRODUCTION_ENV }}" > ./.env.production
         shell: bash
 
@@ -61,7 +61,7 @@ jobs:
           script: |
             const ref = "${{ github.ref }}"
             const pull_number = Number(ref.split('/')[2])
-            
+
             await github.pulls.createReview({
               ...context.repo,
               pull_number: context.issue.number,

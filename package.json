@@ -24,6 +24,7 @@
     "remark-gfm": "^4.0.0",
     "remark-html": "^16.0.1",
     "tailwind-merge": "^2.6.0",
+    "tailwind-scrollbar-hide": "^2.0.0",
     "uuid": "^11.0.5",
     "zod": "^3.24.1"
   },

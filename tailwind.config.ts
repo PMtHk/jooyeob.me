@@ -1,11 +1,12 @@
 import type { Config } from 'tailwindcss'
 import typography from '@tailwindcss/typography'
+import scrollbarHide from 'tailwind-scrollbar-hide'
 
 export default {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/features/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/shared/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/lib/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     screens: {
@@ -126,5 +127,5 @@ export default {
       },
     },
   },
-  plugins: [typography],
+  plugins: [typography, scrollbarHide],
 } satisfies Config
