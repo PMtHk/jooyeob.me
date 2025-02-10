@@ -2,13 +2,13 @@ import Image from 'next/image'
 
 export function HeroBanner() {
   return (
-    <div className='relative mt-6 mb-6 md:mb-10 flex mx-6 max-w-[1100px] h-[100px] md:h-[150px]'>
+    <div className='mx-auto my-4 flex justify-evenly overflow-hidden px-6 max-w-[1100px] max-h-[100px] md:max-h-[150px] md:my-8'>
       <Image
         src='/banner.png'
         alt='banner'
-        fill
-        sizes='100vw'
-        className='h-full w-full rounded-lg object-cover object-center'
+        width={1100}
+        height={150}
+        className='rounded-md object-cover object-center'
       />
     </div>
   )

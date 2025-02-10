@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { pretendard } from '@/shared/utils/fonts'
+import { pretendard } from '../lib/util/fonts'
 import './globals.css'
 
 export default function RootLayout({

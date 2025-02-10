@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { getPost } from '@/shared/libs/posts/actions'
-import { getKST } from '@/shared/utils/getKST'
 import { markdownToHTML } from '@/shared/libs/markdownToHTML'
 import { MarkdownViewer } from '@/shared/components/MarkdownViewer'
+import { getPost } from '@/app/(public)/post/[slug]/actions/getPost'
+import { getKST } from '@/lib/util/getKST'
 
 export async function generateMetadata({
   params,
