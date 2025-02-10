@@ -40,7 +40,7 @@ export default function EditPanel({ openPublishPanel }: Readonly<EditPanelProps>
 
 export function EditPanelFallback() {
   return (
-    <div className='w-screen h-screen flex items-center justify-center'>
+    <div className='flex h-screen w-screen items-center justify-center'>
       편집기를 불러오는 중입니다.
     </div>
   )
@@ -51,7 +51,7 @@ function Panel({
 }: Readonly<{
   children: ReactNode
 }>): ReactElement {
-  return <div className='w-screen h-screen flex flex-col'>{children}</div>
+  return <div className='flex h-screen max-h-screen w-full flex-col overflow-auto'>{children}</div>
 }
 
 function Header({
@@ -59,11 +59,11 @@ function Header({
 }: Readonly<{
   children: ReactNode
 }>): ReactElement {
-  return <div className='pt-2 px-3 md:pt-8 md:px-12'>{children}</div>
+  return <div className='px-3 pt-2 md:px-12 md:pt-8'>{children}</div>
 }
 
 function Divider() {
-  return <div className='w-16 mt-2 ml-2 bg-alt-700 p-0.5 rounded-lg' />
+  return <div className='mt-2 ml-2 w-16 rounded-lg bg-alt-700 p-0.5' />
 }
 
 function Footer({
@@ -72,7 +72,7 @@ function Footer({
   children: ReactNode
 }>): ReactElement {
   return (
-    <div className='w-full bg-alt-800 h-16 shrink-0 flex items-center justify-between px-4'>
+    <div className='flex h-16 w-full shrink-0 items-center justify-between px-4 bg-alt-800'>
       {children}
     </div>
   )

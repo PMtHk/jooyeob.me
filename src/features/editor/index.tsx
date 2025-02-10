@@ -99,7 +99,7 @@ export default function Editor() {
   return (
     <div className='relative flex-1'>
       {isDragging && (
-        <div className='absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 text-white text-xl font-bold border-2 border-dashed border-white pointer-events-none z-10'>
+        <div className='pointer-events-none absolute inset-0 z-10 flex items-center justify-center border-2 border-dashed border-white bg-black bg-opacity-60 text-xl font-bold text-white'>
           이곳에 이미지를 놓으세요
         </div>
       )}

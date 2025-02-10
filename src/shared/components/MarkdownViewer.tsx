@@ -15,6 +15,7 @@ const MarkdownClasses = {
     'prose-blockquote:not-italic prose prose-blockquote:border-primary-200 prose-blockquote:pr-1 prose-blockquote:rounded-sm prose-blockquote:bg-alt-100',
   blockquoteDark: 'dark:prose-blockquote:bg-alt-800',
   a: 'prose-a:text-primary',
+  customs: '[&>pre>code]:bg-transparent',
 }
 
 export function MarkdownViewer({ markdown, html }: MarkdownViewerProps) {
