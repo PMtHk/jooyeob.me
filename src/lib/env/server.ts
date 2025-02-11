@@ -13,6 +13,9 @@ async function validateServerEnv(): Promise<ServerEnv> {
     const env = {
       SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY,
       SUPABASE_STORAGE_BUCKET: process.env.SUPABASE_STORAGE_BUCKET,
+
+      JWT_SECRET: process.env.JWT_SECRET,
+      PASSWORD_HASH: process.env.PASSWORD_HASH,
     }
 
     return serverEnvSchema.parse(env)
