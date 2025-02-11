@@ -2,14 +2,14 @@ import Link from 'next/link'
 import { Post } from '@/app/(public)/components/Post'
 import { HeroBanner } from '@/app/(public)/components/HeroBanner'
 import { Trendings } from '@/app/(public)/components/Trendings'
-import { RecentComments } from '@/app/(public)/components/RecentComments'
+// import { RecentComments } from '@/app/(public)/components/RecentComments'
 import { Tags } from '@/app/(public)/components/Tags'
 import { categories } from '@/lib/constants/category'
 import { cn } from '@/lib/util/cn'
 import { getPosts } from '@/app/(public)/post/actions/getPosts'
 import { getTags } from '@/app/(public)/post/actions/getTags'
 
-export default async function Home({
+export default async function Page({
   searchParams,
 }: {
   searchParams: Promise<{ category: string; tag: string | string[] }>
@@ -63,7 +63,7 @@ export default async function Home({
 
         <div className='hidden flex-col gap-4 border-l px-6 w-[300px] lg:flex'>
           <Trendings />
-          <RecentComments />
+          {/*<RecentComments />*/}
           <Tags tags={tags} selectedTags={selectedTags} />
         </div>
       </div>
