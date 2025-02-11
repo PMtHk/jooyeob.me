@@ -10,7 +10,6 @@ export type ClientPostDetail = Tables<'posts'> & {
 
 export async function getPost(slug: string): Promise<ClientPostDetail> {
   const supabase = createClient()
-  console.log(slug)
 
   const { data: post, error } = await supabase
     .from('posts')
