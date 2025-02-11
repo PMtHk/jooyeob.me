@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
-import type { ClientTags } from '@/shared/libs/posts/actions'
+import type { ClientTags } from '@/app/(public)/post/actions/getTags'
 
 interface TagsProps {
   tags: ClientTags

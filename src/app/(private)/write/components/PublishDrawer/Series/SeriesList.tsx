@@ -1,4 +1,4 @@
-import type { ClientSeries } from '@/features/series/types'
+import { ClientSeries } from '@/app/(private)/write/actions/createSeries'
 
 interface SeriesListProps {
   seriesList: ClientSeries[]
