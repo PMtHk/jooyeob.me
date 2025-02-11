@@ -3,10 +3,11 @@
 import { useEffect, useState } from 'react'
 import { useWrite } from '@/app/(private)/write/hooks/useWrite'
 import { Button } from '@/components/ui'
-import type { ClientSeries } from '@/features/series/types'
-import { createSeries, getSeries } from '@/app/(private)/write/actions/getSeries'
 import { CreateSeries } from '@/app/(private)/write/components/PublishDrawer/Series/CreateSeries'
 import { SeriesList } from '@/app/(private)/write/components/PublishDrawer/Series/SeriesList'
+import { createSeries } from '@/app/(private)/write/actions/createSeries'
+import type { ClientSeries } from '@/app/(private)/write/actions/createSeries'
+import { getSeries } from '@/app/(private)/write/actions/getSeries'
 
 export default function Series() {
   const { series: selectedSeries, setSeries } = useWrite()

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import type { ClientPost } from '@/shared/libs/posts/actions'
 import { getKST } from '@/lib/util/getKST'
+import type { ClientPost } from '@/app/(public)/post/actions/getPosts'
 
 export function Post({ title, summary, created_at, slug, thumbnail_url }: ClientPost) {
   return (

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { ChangeEvent } from 'react'
-import { Button } from '../../../../../../components/ui'
+import { Button } from '@/components/ui'
 
 interface CreateSeriesProps {
   onCreate: (name: string) => Promise<void>
