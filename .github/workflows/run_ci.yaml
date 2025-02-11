@@ -62,8 +62,8 @@ jobs:
             const ref = "${{ github.ref }}"
             const pull_number = Number(ref.split('/')[2])
 
-            await github.pulls.createReview({
+            await github.rest.pulls.createReview({
               ...context.repo,
-              pull_number: context.issue.number,
+              pull_number: pull_number,
               body: '빌드에 실패했습니다. 코드 / 환경변수 등을 확인해주세요.',
             })
