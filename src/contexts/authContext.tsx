@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
-import { cookieName } from '@/lib/auth/auth.constants'
+import { cookieName } from '@/lib/constants/auth'
 
 interface IAuthContext {
   isAuthenticated: boolean

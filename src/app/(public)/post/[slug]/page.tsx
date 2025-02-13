@@ -6,6 +6,9 @@ import { getPost } from '@/app/(public)/post/[slug]/actions/getPost'
 import { getKST } from '@/lib/util/getKST'
 import { markdownToHTML } from '@/lib/util/markdownToHTML'
 import { MarkdownViewer } from '@/components/MarkdownViewer'
+import { AuthProvider } from '@/contexts/authContext'
+import { EditButton } from '@/app/(public)/post/components/EditButton'
+import { DeleteButton } from '@/app/(public)/post/components/DeleteButton'
 
 export async function generateMetadata({
   params,
@@ -28,7 +31,7 @@ export async function generateMetadata({
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const rawSlug = (await params).slug
   const slug = decodeURIComponent(rawSlug)
-  const { title, tags, created_at, content, thumbnail_url } = await getPost(slug)
+  const { title, tags, created_at, content, thumbnail_url, id } = await getPost(slug)
 
   const contentHTML = await markdownToHTML(content ?? '')
 
@@ -48,12 +51,20 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 </span>
               ))}
             </div>
-            <section className='mt-5'>
-              <div className='pt-2'>
-                <span className='text-default-xl'>나주엽</span>
+            <div className='mt-5 flex items-center justify-between'>
+              <div className='pt-2 text-default-xl'>
+                <span>나주엽</span>
+                <span className='px-1'>·</span>
+                <span>{getKST(created_at!)}</span>
               </div>
-              <div className='pt-1 text-default-md'>{getKST(created_at!)}</div>
-            </section>
+
+              <div className='pt-2 text-default-md'>
+                <AuthProvider>
+                  <EditButton id={id} />
+                  <DeleteButton id={id} />
+                </AuthProvider>
+              </div>
+            </div>
 
             <div className='mt-12'>
               <Image

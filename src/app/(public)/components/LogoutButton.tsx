@@ -1,11 +1,10 @@
 'use client'
 
 import { Button } from '@/components/ui'
-import { logout } from '@/lib/auth/auth.actions'
+import { logout } from '@/lib/actions/auth'
 import { useAuth } from '@/contexts/authContext'
 
 export function LogoutButton() {
-
   const { isAuthenticated, setIsAuthenticated } = useAuth()
 
   if (!isAuthenticated) {
