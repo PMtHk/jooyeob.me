@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui'
-import { logout } from '@/lib/actions/auth'
+import { logout } from '@/lib/actions/private/auth'
 import { useAuth } from '@/contexts/authContext'
 
 export function LogoutButton() {
