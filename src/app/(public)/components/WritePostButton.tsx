@@ -7,8 +7,6 @@ import { useAuth } from '@/contexts/authContext'
 export function WritePostButton() {
   const { isAuthenticated } = useAuth()
 
-  console.log(isAuthenticated)
-
   if (!isAuthenticated) {
     return null
   }

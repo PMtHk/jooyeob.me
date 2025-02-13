@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui'
 import { useAuth } from '@/contexts/authContext'
-import { deletePost } from '@/lib/actions/post'
+import { deletePost } from '@/lib/actions/private/post'
 
 export function DeleteButton({
   id,

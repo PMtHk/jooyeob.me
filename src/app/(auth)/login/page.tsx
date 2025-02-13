@@ -2,7 +2,7 @@
 
 import { useActionState } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { login } from '@/lib/actions/auth'
+import { login } from '@/lib/actions/private/auth'
 import { LoginState } from '@/lib/types/auth'
 import { Button } from '@/components/ui'
 

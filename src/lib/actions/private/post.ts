@@ -1,7 +1,7 @@
 'use server'
 
 import { redirect } from 'next/navigation'
-import { authenticate } from '@/lib/actions/auth'
+import { authenticate } from '@/lib/actions/private/auth'
 import { createClient } from '@/lib/supabase/server'
 
 export async function deletePost(postId: number) {
