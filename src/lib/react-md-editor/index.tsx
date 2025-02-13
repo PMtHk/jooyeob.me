@@ -12,7 +12,7 @@ import {
   Image,
   CodeBlock,
 } from '@/lib/react-md-editor/commands'
-import { useWrite } from '@/app/(private)/write/hooks/useWrite'
+import { useWrite } from '@/lib/hooks/useWrite'
 import './editor.css'
 
 const commandsList = [
