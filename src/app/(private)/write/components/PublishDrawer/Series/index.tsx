@@ -47,22 +47,22 @@ export default function Series() {
         <Button
           onClick={openSeriesModal}
           variant='ghost'
-          className='w-full mt-2 bg-white dark:bg-alt-800 px-4 py-2 rounded-md hover:bg-alt-200 dark:hover:bg-alt-700'
+          className='mt-2 w-full rounded-md bg-white px-4 py-2 hover:bg-alt-200 dark:bg-alt-800 dark:hover:bg-alt-700'
         >
           시리즈에 추가하기
         </Button>
       )}
 
       {selectedSeries !== -1 && !isOpen && (
-        <div className='w-full mt-2 flex bg-white dark:bg-alt-800 px-4 py-2 rounded-md'>
+        <div className='mt-2 flex w-full rounded-md bg-white px-4 py-2 dark:bg-alt-800'>
           <span className='text-alt-600'>series/</span>
-          <p className='flex-1 text-ellipsis line-clamp-1'>
+          <p className='line-clamp-1 flex-1 text-ellipsis'>
             {seriesList.find(({ id }) => id === selectedSeries)?.name}
           </p>
           <Button
             onClick={handleRemoveSeries}
             variant='ghost'
-            className='ml-2 py-0 shrink-0 text-danger'
+            className='ml-2 shrink-0 py-0 text-danger'
           >
             제거
           </Button>

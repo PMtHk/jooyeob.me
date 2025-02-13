@@ -6,9 +6,9 @@ import { AuthProvider } from '@/contexts/authContext'
 
 export async function Header() {
   return (
-    <nav className='sticky top-0 w-full h-[60px] bg-background border-b z-50 px-4'>
-      <div className='h-full sm:px-6 md:w-[92%] lg:w-[92%] md:mx-auto lg:mx-auto'>
-        <div className='flex items-center justify-between h-full'>
+    <nav className='sticky top-0 z-50 h-[60px] w-full border-b bg-background px-4'>
+      <div className='h-full sm:px-6 md:mx-auto md:w-[92%] lg:mx-auto lg:w-[92%]'>
+        <div className='flex h-full items-center justify-between'>
           <Link href='/' className='flex items-center'>
             <Image
               src='/yeob.svg'

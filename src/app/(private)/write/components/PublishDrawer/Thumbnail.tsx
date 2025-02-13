@@ -43,18 +43,18 @@ export function Thumbnail() {
   }
 
   return (
-    <div className='mt-2 flex items-center justify-center w-full h-48 bg-white dark:bg-alt-900 rounded-md relative'>
+    <div className='relative mt-2 flex h-48 w-full items-center justify-center rounded-md bg-white dark:bg-alt-900'>
       {thumbnailURL ? (
-        <div className='relative w-full h-full'>
+        <div className='relative h-full w-full'>
           <Image
             src={thumbnailURL}
             alt='Thumbnail'
-            className='w-full h-full object-cover rounded-md'
+            className='h-full w-full rounded-md object-cover'
             layout='fill'
           />
           <Button
             variant='ghost'
-            className='absolute top-2 right-2 text-danger'
+            className='absolute right-2 top-2 text-danger'
             onClick={handleRemove}
           >
             제거

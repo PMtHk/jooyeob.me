@@ -18,9 +18,9 @@ export default function LoginPage() {
   const [state, action, pending] = useActionState<LoginState, FormData>(login, initialState)
 
   return (
-    <div className='flex items-center justify-center min-h-screen'>
+    <div className='flex min-h-screen items-center justify-center'>
       <form action={action}>
-        <label htmlFor='password' className='block mb-2'>
+        <label htmlFor='password' className='mb-2 block'>
           패스워드 입력
           <input
             id='password'
@@ -28,13 +28,13 @@ export default function LoginPage() {
             type='password'
             placeholder='패스워드'
             required
-            className='mt-2 bg-transparent w-full p-2 border-b focus:outline-none focus:border-blue-500 transition-colors'
+            className='mt-2 w-full border-b bg-transparent p-2 transition-colors focus:border-blue-500 focus:outline-none'
           />
         </label>
         <Button
           disabled={pending}
           type='submit'
-          className='w-full py-2 mt-4 bg-primary text-white font-medium rounded-md hover:opacity-80 transition-colors'
+          className='mt-4 w-full rounded-md bg-primary py-2 font-medium text-white transition-colors hover:opacity-80'
         >
           로그인
         </Button>

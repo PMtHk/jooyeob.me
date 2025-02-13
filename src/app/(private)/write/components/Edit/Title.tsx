@@ -44,7 +44,7 @@ export function Title() {
       onResize={handleResize}
       onChange={handleInput}
       placeholder='제목을 입력하세요'
-      className='w-full resize-none scroll-auto bg-transparent p-2 text-display-lg focus:outline-none md:text-display-xl '
+      className='w-full resize-none scroll-auto bg-transparent p-2 text-display-lg focus:outline-none md:text-display-xl'
     />
   )
 }

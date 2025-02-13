@@ -21,9 +21,9 @@ export async function Trendings() {
 function TrendingPost({ title, created_at, slug }: ClientPost) {
   return (
     <li>
-      <Link href={`/post/${slug}`} className='flex py-3 group'>
+      <Link href={`/post/${slug}`} className='group flex py-3'>
         <div className='flex flex-grow flex-col pr-5'>
-          <span className='text-default-lg mb-1.5 group-hover:text-primary'>{title}</span>
+          <span className='mb-1.5 text-default-lg group-hover:text-primary'>{title}</span>
           <span className='text-body-sm text-alt-700 dark:text-alt-500'>{getKST(created_at!)}</span>
         </div>
       </Link>

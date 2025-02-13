@@ -21,18 +21,18 @@ export function CreateSeries({ onCreate, onCancel }: CreateSeriesProps) {
   }
 
   return (
-    <div className='w-full flex flex-col mt-2'>
-      <div className='w-full flex bg-white dark:bg-alt-800 px-4 py-2 rounded-md'>
+    <div className='mt-2 flex w-full flex-col'>
+      <div className='flex w-full rounded-md bg-white px-4 py-2 dark:bg-alt-800'>
         <input
           value={newSeriesName}
           onChange={handleInput}
           placeholder='새로운 시리즈 이름을 입력하세요'
-          className='w-full bg-white dark:bg-alt-800 focus:outline-none'
+          className='w-full bg-white focus:outline-none dark:bg-alt-800'
         />
       </div>
 
       <div
-        className={`w-full mt-2 bg-white dark:bg-alt-800 mr-1 px-4 py-2 rounded-md transition-all duration-300 ${
+        className={`mr-1 mt-2 w-full rounded-md bg-white px-4 py-2 transition-all duration-300 dark:bg-alt-800 ${
           newSeriesName.length ? 'flex' : 'hidden'
         }`}
       >

@@ -42,12 +42,12 @@ export function TagInputList() {
   }
 
   return (
-    <div className='mt-4 flex flex-1 gap-2 items-center h-fit flex-wrap'>
+    <div className='mt-4 flex h-fit flex-1 flex-wrap items-center gap-2'>
       {tags.map((tag) => (
         <p
           key={tag}
           onClick={() => handleRemove(tag)}
-          className='text-center whitespace-nowrap w-fit cursor-pointer px-3 py-0.5 bg-alt-700 text-white rounded-2xl text-primary-300'
+          className='w-fit cursor-pointer whitespace-nowrap rounded-2xl bg-alt-700 px-3 py-0.5 text-center text-primary-300 text-white'
         >
           {tag}
         </p>
@@ -62,7 +62,7 @@ export function TagInputList() {
         onCompositionStart={() => setIsComposing(true)}
         onCompositionEnd={() => setIsComposing(false)}
         placeholder='태그를 입력하세요.'
-        className='flex w-fit h-full px-3 py-0.5 rounded-lg bg-transparent focus:outline-none'
+        className='flex h-full w-fit rounded-lg bg-transparent px-3 py-0.5 focus:outline-none'
       />
     </div>
   )
