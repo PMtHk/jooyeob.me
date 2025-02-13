@@ -64,7 +64,7 @@ function Header({
 }
 
 function Divider() {
-  return <div className='mt-2 ml-2 w-16 rounded-lg bg-alt-700 p-0.5' />
+  return <div className='ml-2 mt-2 w-16 rounded-lg bg-alt-700 p-0.5' />
 }
 
 function Footer({
@@ -73,7 +73,7 @@ function Footer({
   children: ReactNode
 }>): ReactElement {
   return (
-    <div className='flex h-16 w-full shrink-0 items-center justify-between px-4 bg-alt-800'>
+    <div className='flex h-16 w-full shrink-0 items-center justify-between bg-alt-800 px-4'>
       {children}
     </div>
   )

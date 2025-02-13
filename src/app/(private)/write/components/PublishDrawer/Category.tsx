@@ -11,7 +11,7 @@ export function Category() {
   return (
     <>
       <h3 className='text-display-sm'>카테고리 설정</h3>
-      <div className='mt-2 w-full flex gap-2'>
+      <div className='mt-2 flex w-full gap-2'>
         <Button
           variant={category === 'dev' ? 'default' : 'outline'}
           onClick={() => handleClick('dev')}

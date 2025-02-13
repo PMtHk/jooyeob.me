@@ -6,19 +6,19 @@ import type { ClientPost } from '@/app/(public)/post/actions/getPosts'
 export function Post({ title, summary, created_at, slug, thumbnail_url }: ClientPost) {
   return (
     <li>
-      <Link href={`/post/${slug}`} className='flex py-6 group'>
+      <Link href={`/post/${slug}`} className='group flex py-6'>
         <div className='flex flex-grow flex-col pr-4'>
-          <span className='text-display-xs mb-1.5 group-hover:text-primary md:text-display-sm'>
+          <span className='mb-1.5 text-display-xs group-hover:text-primary md:text-display-sm'>
             {title}
           </span>
-          <span className='mb-4 text-body-sm text-alt-700 dark:text-alt-500 md:text-body-md'>
+          <span className='mb-4 text-body-sm text-alt-700 md:text-body-md dark:text-alt-500'>
             {summary}
           </span>
           <span className='text-body-sm text-alt-700 dark:text-alt-600'>{getKST(created_at!)}</span>
         </div>
         {thumbnail_url && (
           <div
-            className='min-w-[130px] relative flex overflow-hidden rounded-lg'
+            className='relative flex min-w-[130px] overflow-hidden rounded-lg'
             style={{ width: '130px', height: '90px' }}
           >
             <Image
@@ -27,7 +27,7 @@ export function Post({ title, summary, created_at, slug, thumbnail_url }: Client
               fill
               sizes='20vw'
               style={{ objectFit: 'fill' }}
-              className='rounded-lg group-hover:scale-110 transition-transform'
+              className='rounded-lg transition-transform group-hover:scale-110'
             />
           </div>
         )}
