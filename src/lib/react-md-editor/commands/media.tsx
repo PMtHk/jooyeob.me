@@ -1,5 +1,5 @@
 import type { ICommand } from '@uiw/react-md-editor'
-import { uploadImage } from '@/app/(private)/write/actions/uploadImage'
+import { uploadImage } from '@/lib/actions/private/image'
 
 export const Image: ICommand = {
   name: 'image',
