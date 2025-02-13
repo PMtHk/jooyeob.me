@@ -65,5 +65,4 @@ export async function logout() {
 
   const cookieStore = await cookies()
   cookieStore.delete(cookieName)
-  redirect('/')
 }
