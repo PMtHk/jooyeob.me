@@ -2,7 +2,7 @@
 
 import { useSearchParams } from 'next/navigation'
 import { useActionState } from 'react'
-import { login, LoginState } from '@/lib/actions/auth'
+import { login, LoginState } from '@/lib/auth/auth.actions'
 import { Button } from '@/components/ui'
 
 export default function LoginPage() {
