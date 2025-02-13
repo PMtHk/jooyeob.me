@@ -25,7 +25,7 @@ export function Button({
       {...props}
       disabled={disabled}
       className={cn(
-        'rounded-lg px-4 py-2 transition-colors duration-200',
+        'rounded-md px-3 py-1 transition-colors duration-200',
         variants[variant],
         disabled && 'cursor-not-allowed opacity-50',
         className,
