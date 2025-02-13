@@ -1,15 +1,14 @@
 'use client'
 
-import { useSearchParams } from 'next/navigation'
 import { useActionState } from 'react'
-import { login, LoginState } from '@/lib/auth/auth.actions'
+import { useSearchParams } from 'next/navigation'
+import { login } from '@/lib/actions/auth'
+import { LoginState } from '@/lib/types/auth'
 import { Button } from '@/components/ui'
 
 export default function LoginPage() {
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get('cb') || '/'
-
-  console.log(callbackUrl)
 
   const initialState = {
     message: '',
