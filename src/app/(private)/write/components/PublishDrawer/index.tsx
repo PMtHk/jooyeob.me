@@ -89,7 +89,7 @@ function Panel({
 }>): ReactElement {
   return (
     <div
-      className={`fixed bottom-0 w-screen h-screen bg-background z-10 transition-transform duration-300 flex items-center justify-center ${
+      className={`fixed bottom-0 z-10 flex h-screen w-screen items-center justify-center bg-background transition-transform duration-300 ${
         isOpen ? 'translate-y-0' : 'translate-y-full'
       }`}
     >

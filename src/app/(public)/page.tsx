@@ -28,9 +28,9 @@ export default async function Page({
     <div className='min-h-screen w-full pb-12'>
       <HeroBanner />
 
-      <div className='mx-auto flex justify-evenly max-w-[1200px] break-keep'>
+      <div className='mx-auto flex max-w-[1200px] justify-evenly break-keep'>
         <div className='flex w-full flex-col px-6 lg:max-w-[700px]'>
-          <nav className='sticky flex w-full border-b pt-3 text-default-xl top-[60px] bg-background'>
+          <nav className='sticky top-[60px] flex w-full border-b bg-background pt-3 text-default-xl'>
             <Link
               href='/'
               className={cn('px-4 pb-2 text-gray-500', {
@@ -61,7 +61,7 @@ export default async function Page({
           </ul>
         </div>
 
-        <div className='hidden flex-col gap-4 border-l px-6 w-[300px] lg:flex'>
+        <div className='hidden w-[300px] flex-col gap-4 border-l px-6 lg:flex'>
           <Trendings />
           {/*<RecentComments />*/}
           <Tags tags={tags} selectedTags={selectedTags} />

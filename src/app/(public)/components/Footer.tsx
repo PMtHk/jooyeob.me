@@ -3,7 +3,7 @@ import Link from 'next/link'
 export function Footer() {
   return (
     <footer>
-      <div className='mx-auto flex w-fit break-keep p-6 h-[60px] gap-3 text-alt-600 text-default-md'>
+      <div className='mx-auto flex h-[60px] w-fit gap-3 break-keep p-6 text-default-md text-alt-600'>
         <Link href='https://github.com/PMtHk'>
           <span>Github</span>
         </Link>

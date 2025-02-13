@@ -10,7 +10,7 @@ export const Heading1: ICommand = {
       width={24}
       height={24}
       viewBox='0 0 24 24'
-      className='md:w-7 md:h-7 fill-foreground'
+      className='fill-foreground md:h-7 md:w-7'
     >
       <path d='M11 7h2v10h-2v-4H7v4H5V7h2v4h4V7zm6.57 0c-.594.95-1.504 1.658-2.57 2v1h2v7h2V7h-1.43z' />
     </svg>
@@ -35,7 +35,7 @@ export const Heading2: ICommand = {
       width={24}
       height={24}
       viewBox='0 0 24 24'
-      className='md:w-7 md:h-7 fill-foreground'
+      className='fill-foreground md:h-7 md:w-7'
     >
       <rect x='0' fill='none' width='24' height='24' />
       <g>
@@ -66,7 +66,7 @@ export const Heading3: ICommand = {
       width={24}
       height={24}
       viewBox='0 0 24 24'
-      className='md:w-7 md:h-7 fill-foreground'
+      className='fill-foreground md:h-7 md:w-7'
     >
       <rect x='0' fill='none' width='24' height='24' />
       <g>
