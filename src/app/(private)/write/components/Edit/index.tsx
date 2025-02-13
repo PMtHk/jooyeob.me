@@ -25,7 +25,7 @@ export default function Edit({ openPublishPanel }: Readonly<EditPanelProps>) {
       <Editor />
 
       <Footer>
-        <Button variant='ghost' className='text-foreground' onClick={handleGoBack}>
+        <Button variant='ghost' className='text-white' onClick={handleGoBack}>
           뒤로가기
         </Button>
         <FooterGroup>

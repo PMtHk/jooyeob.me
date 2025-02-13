@@ -15,7 +15,7 @@ export function WritePostButton() {
 
   return (
     <Link href='/write'>
-      <Button className="">새 글 작성</Button>
+      <Button>새 글 작성</Button>
     </Link>
   )
 }
