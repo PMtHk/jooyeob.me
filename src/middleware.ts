@@ -6,7 +6,9 @@ export async function middleware(request: NextRequest) {
   const callbackUrl = request.nextUrl.pathname + request.nextUrl.search
 
   if (!token) {
-    return NextResponse.redirect(new URL(`/login?cb=${callbackUrl}`, request.url))
+    const url = new URL('/login', request.url)
+    url.searchParams.set('cb', callbackUrl)
+    return NextResponse.redirect(url)
   }
 
   try {
@@ -14,8 +16,8 @@ export async function middleware(request: NextRequest) {
     await jwtVerify(token, secret)
 
     return NextResponse.next()
-  } catch (error) {
-    return NextResponse.redirect(new URL(`/login?cb=${error}`, request.url))
+  } catch {
+    return NextResponse.redirect(new URL(`/login`, request.url))
   }
 }
 
